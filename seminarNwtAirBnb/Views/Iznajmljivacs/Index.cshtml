@@ -1,0 +1,59 @@
+﻿@model IEnumerable<seminarNwtAirBnb.Models.Iznajmljivac>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SlikaIznajmljivac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListaSmjestajnihJedinica)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.SlikaIznajmSource" width="75" height="90" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezime)
+        </td>
+        <td>
+
+            <ul class="list-group">
+               
+                @foreach (var sj in item.ListaSmjestajnihJedinica)
+                {
+                    <a>@Html.ActionLink(@sj.Naziv, "Details", "SmjestajnaJedinicas", new { id = sj.SmjestajnaJedinicaID }, null)</a>
+                }
+            </ul>
+        </td>
+
+          <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IznajmljivacID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IznajmljivacID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IznajmljivacID })
+        </td>
+    </tr>
+}
+
+</table>

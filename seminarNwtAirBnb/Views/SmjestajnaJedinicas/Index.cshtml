@@ -1,0 +1,45 @@
+﻿@model IEnumerable<seminarNwtAirBnb.Models.SmjestajnaJedinica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SlikaSMJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.SlikaSMJSource" width="100" height="90" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SmjestajnaJedinicaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SmjestajnaJedinicaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SmjestajnaJedinicaID })
+        </td>
+    </tr>
+}
+
+</table>

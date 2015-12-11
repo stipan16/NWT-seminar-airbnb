@@ -1,0 +1,31 @@
+﻿@font-face {
+    font-family: 'Open Sans';
+	src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+.Botun1{
+    border: 2px solid;
+}
+
+.nav_vrh_desno{
+    padding:5px;
+}
+
+.dropdown-toggle{
+    padding: 15px 15px;
+}
+
+body {
+    padding-top: 60px;
+    font-family: "Open Sans";
+}
+
+#main-container {
+    display: flex;
+}
+
+.midDiv1{
+    text-align:center;
+    padding-top:125px;
+    height:300px;
+}
