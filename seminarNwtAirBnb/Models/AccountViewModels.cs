@@ -79,6 +79,17 @@ namespace seminarNwtAirBnb.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(160, MinimumLength = 2)]
+        public string Ime { get; set; }
+
+        [Required]
+        [StringLength(160, MinimumLength = 2)]
+        public string Prezime { get; set; }
+        
+        public byte[] SlikaKorisnika { get; set; }
+        
     }
 
     public class ResetPasswordViewModel
